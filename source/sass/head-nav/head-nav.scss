@@ -44,7 +44,8 @@
         width: 20px;
         height: 20px;
         top: -2px;
-        background: url(/img/head-arrow.png) 50% 50% no-repeat;
+        background-size: 20px;
+        background: url(../img/head-arrow.png) 50% 50% no-repeat;
         transition: transform 0.2s ease-in-out;
     }
     .head-nav__inner--active::after {
