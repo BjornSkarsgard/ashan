@@ -1,0 +1,84 @@
+//slider container styles 
+.filter__range-block {
+    padding: 0;
+    position: relative;
+}
+
+//slider wrapper styles
+.filter__range {
+    width: 100%;
+}
+
+//styles of range buttons
+.ui-slider-handle {
+    position: absolute;
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $green;
+    border-radius: 50%;
+    background-color: white;
+    top: -6px;
+    cursor: pointer;
+}
+
+//styles of inner line
+.ui-slider-range {
+    position: absolute;
+    height: 3px;
+    background-color: $green;
+}
+
+//styles of external line
+.ui-slider {
+    position: relative;
+    height: 3px;
+    top: 8px;
+    background-color: #C4C4C4;
+}
+
+//style of input wrapper
+.filter__range-block p {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+    margin-bottom: 6px;
+}
+
+//gray line
+.slider__range-line {
+    height: 1px;
+    position: relative;
+    width: 100%;
+    background-color: #c4c4c4;
+    top: 13px;
+}
+
+//style of input blocks
+.filter__range-block p input {
+    width: 60px;
+    height: 25px;
+    text-align: center;
+    border-radius: 14px;
+    border: 1px solid $green;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.filter__range-block p input:first-child {
+    margin-right: 11px;
+}
+
+.filter__range-block p input:last-child {
+    margin-left: 11px;
+}
+
+@media(min-width: $tablet-width) {
+    .filter__range-block p input:first-child {
+        margin-right: 15px;
+    }
+    .filter__range-block p input:last-child {
+        margin-left: 15px;
+    }
+}

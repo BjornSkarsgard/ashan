@@ -1,0 +1,150 @@
+.block {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    padding: 32px 17px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    width: 330px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: stretch;
+}
+
+@media(min-width: $tablet-width) {
+    .block {
+        margin-bottom: 30px;
+    }
+}
+
+.block__picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: auto;
+}
+
+.block__title {
+    width: 222px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 18px;
+    margin-bottom: 26px;
+}
+
+@media(min-width: $desktop-width) {
+    .block__title {
+        margin-top: 19px;
+        margin-bottom: 17px;
+    }
+}
+
+@media(min-width: $tablet-width) {
+    .block__title {
+        margin-bottom: 3px;
+    }
+}
+
+.block__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+@media(min-width: $tablet-width) {
+    .block__price {
+        margin-bottom: 19px;
+    }
+}
+
+@media(min-width: $desktop-width) {
+    .block__price {
+        margin-bottom: 5px;
+    }
+}
+
+.block__price-discount {
+    font-size: 18px;
+    color: $gray;
+    padding-right: 13px;
+    padding-left: 4px;
+    text-decoration: line-through;
+    margin: 0;
+}
+
+.block__price-sell {
+    margin: 0;
+    font-size: 30px;
+    line-height: 41px;
+    font-weight: 800;
+    color: $green;
+}
+
+.block__buy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.block__amount-wrapper {
+    color: $green;
+    background-color: $light-gray;
+    display: flex;
+    padding: 14px 17px 14px 21px;
+    border-radius: 30px;
+}
+
+.block__del,
+.block__add {
+    position: relative;
+}
+
+.block__count {
+    padding: 0 33px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.block__del::before,
+.block__add::before {
+    content: "";
+    position: absolute;
+    font-size: 25px;
+    font-weight: 300;
+    top: -9px;
+    cursor: pointer;
+}
+
+.block__del::before {
+    content: "-";
+    left: 0;
+}
+
+.block__add::before {
+    content: "+";
+    right: 0;
+}
+
+.block__add:active,
+.block__del:active {
+    color: #0C8343;
+}
+
+.block__btn {
+    border: none;
+    background-color: $green;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    padding: 14px 45px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.block__btn:hover,
+.block__btn:active {
+    background-color: #0C8343;
+    transition: background-color 0.3s ease;
+}

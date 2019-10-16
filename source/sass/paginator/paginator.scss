@@ -1,0 +1,114 @@
+.paginator {
+    margin-bottom: 20px;
+}
+
+@media(min-width: $tablet-width) {
+    .paginator {
+        margin-left: 44px;
+        margin-right: 44px;
+        padding-bottom: 42px;
+        margin-bottom: 69px;
+        border-bottom: 1px solid #c4c4c4;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .paginator {
+        margin-bottom: 0;
+        padding-bottom: 68px;
+        border: 0;
+    }
+}
+
+@media(min-width: $desktop-width) {
+    .paginator__wrapper {
+        border-bottom: 1px solid #c4c4c4;
+        padding-bottom: 33px;
+    }
+}
+
+.paginator__items {
+    padding: 0 28px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    line-height: 21px;
+    max-width: 460px;
+}
+
+.paginator__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+@media (min-width: $desktop-width) {
+    .paginator__item {
+        margin: 0 13px 0 13px;
+    }
+}
+
+.paginator__item:nth-child(5) {
+    display: none;
+}
+
+@media (min-width:$tablet-width) {
+    .paginator__item:nth-child(5) {
+        display: flex;
+    }
+}
+
+.paginator__item-link {
+    color: $gray;
+    display: inline-block;
+    width: 40px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.paginator__item-link--active {
+    border: 2px solid $green;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 1;
+}
+
+.paginator__item:first-child,
+.paginator__item:last-child {
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    position: absolute;
+    background-size: 13px;
+    cursor: pointer;
+}
+
+.paginator__item:first-child {
+    left: 10px;
+    background: url(/img/paginator__gray.png) 50% 50% no-repeat;
+    background-size: 17px;
+}
+
+.paginator__item:last-child {
+    right: 10px;
+    background: url(/img/paginator__green.png) 50% 50% no-repeat;
+    background-size: 17px;
+}
+
+@media (min-width: $desktop-width) {
+    .paginator__item:first-child,
+    .paginator__item:last-child {
+        margin: 0;
+        width: 25px;
+        height: 25px;
+        background-size: 18px;
+        top: 6px;
+    }
+}

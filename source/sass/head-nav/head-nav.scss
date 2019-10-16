@@ -1,0 +1,113 @@
+.head-nav {
+    display: none;
+}
+
+@media(min-width: $desktop-width) {
+    .head-nav {
+        display: block;
+        background-color: $green;
+    }
+    .head-nav__wrapper {
+        width: 1505px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 31px;
+        box-sizing: border-box;
+    }
+    .head-nav__company {
+        display: flex;
+    }
+    .head-nav__city-wrapper {
+        display: flex;
+        margin-right: 4px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 15px;
+        color: white;
+        cursor: pointer;
+        position: relative;
+        align-self: center;
+    }
+    .head-nav__title {
+        margin: 0;
+        padding-right: 6px;
+    }
+    .head-nav__inner {
+        position: relative;
+        padding-right: 20px;
+        width: 125px;
+    }
+    .head-nav__inner::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -2px;
+        background: url(/img/head-arrow.png) 50% 50% no-repeat;
+        transition: transform 0.2s ease-in-out;
+    }
+    .head-nav__inner--active::after {
+        transform: rotate(180deg);
+        transition: transform 0.2s ease-in-out;
+    }
+    .head-nav__items {
+        display: none;
+        position: absolute;
+        background-color: $green;
+        z-index: 4;
+        right: 27px;
+        border-radius: 0 0 10px 10px;
+        top: 13px;
+        padding: 0;
+    }
+    .head-nav__cities {
+        padding: 11px 15px 11px 15px;
+        transition: background-color 0.4s ease-in-out;
+    }
+    .head-nav__cities:last-child {
+        border-radius: 0 0 10px 10px;
+    }
+    .head-nav__cities:hover {
+        background-color: rgb(2, 122, 58);
+        transition: background-color 0.4s ease-in-out;
+    }
+    .head-nav__link {
+        display: inline-block;
+        margin: 0 0 0 21px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 15px;
+        color: white;
+        position: relative;
+        vertical-align: middle;
+    }
+    .head-nav__link::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 16px;
+        width: 100%;
+        height: 1px;
+        background-color: #ffffff;
+        transform-origin: right;
+        transform: scaleX(0);
+        border-radius: 10px;
+        transition: transform ease-out .3s;
+    }
+    .head-nav__link:hover::after {
+        transition: transform ease-out .3s;
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    .head-nav__tel-wrapper {
+        margin-right: 3px;
+    }
+    .head-nav__tel {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        color: white;
+    }
+}

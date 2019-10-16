@@ -1,0 +1,8 @@
+@media(min-width: $desktop-width) {
+    .footer {
+        max-width: 1502px;
+        margin: 0 auto;
+        position: relative;
+        background-color: $color-content;
+    }
+}

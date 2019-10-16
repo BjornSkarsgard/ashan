@@ -1,0 +1,423 @@
+.filter {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+}
+
+@media(min-width: $tablet-width) {
+    .filter {
+        padding: 0;
+    }
+}
+
+.filter__wrapper {
+    padding-bottom: 7px;
+    border-bottom: .5px solid $light-gray;
+    margin-bottom: 22px;
+}
+
+@media(min-width:$desktop-width) {
+    .filter__wrapper {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 0 none;
+        border-top: 1px solid #c4c4c4;
+        padding-top: 22px;
+    }
+}
+
+.filter__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $light-gray;
+    padding: 17px 15px;
+    border-radius: 5px;
+    color: $gray;
+}
+
+@media(min-width: $tablet-width) {
+    .filter__header {
+        padding: 17px 20px;
+    }
+}
+
+@media(min-width: $desktop-width) {
+    .filter__header {
+        display: none;
+    }
+}
+
+.filter__checkbox-inp:checked+.filter__header {
+    border-radius: 5px 5px 0 0;
+}
+
+.filter__title {
+    margin: 0;
+}
+
+.filter__roll-wrapper {
+    position: relative;
+}
+
+.filter__roll-wrapper::before {
+    content: "Развернуть";
+    position: absolute;
+    right: -14px;
+    top: -3px;
+    width: 100px;
+    height: 20px;
+    font-size: 13px;
+}
+
+.filter__block-header>.filter__block-roll>.filter__roll-wrapper::before {
+    color: $green;
+    cursor: pointer;
+}
+
+.filter__checkbox-inp:checked+.filter__header>.filter__block-roll>.filter__roll-wrapper::before,
+.filter__checkbox-inp:checked+.filter__block-header>.filter__block-roll>.filter__roll-wrapper::before {
+    content: "Свернуть";
+    right: -26px;
+}
+
+.filter__checkbox-inp:checked+.filter__block-header>.filter__block-roll>.filter__roll-wrapper::before {
+    right: -14px;
+}
+
+.filter__checkbox-roll {
+    position: relative;
+}
+
+.filter__checkbox-roll::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -10px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.filter__checkbox-roll::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: url(/img/arrow__green.png) 49% 50% no-repeat;
+    background-size: 8px;
+    transform: rotate(180deg);
+    top: -2px;
+    right: -5px;
+}
+
+.filter__roll-wrapper--main>.filter__checkbox-roll::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    background: url(/img/arrow.png) 49% 50% no-repeat;
+    background-size: 10px;
+    transform: rotate(180deg);
+    top: 9px;
+    right: -2px;
+}
+
+.filter__checkbox-inp:checked+.filter__header .filter__roll-wrapper--main>.filter__checkbox-roll::after,
+.filter__checkbox-inp:checked+.filter__block-header .filter__checkbox-roll::after {
+    transform: rotate(0deg);
+}
+
+.filter__roll-wrapper--main .filter__checkbox-roll::before {
+    display: none;
+}
+
+.filter__box {
+    display: none;
+    background-color: $light-gray;
+    border-radius: 0 0 3px 3px;
+    padding-bottom: 34px;
+}
+
+@media(min-width: $tablet-width) {
+    .filter__box {
+        padding-bottom: 23px;
+    }
+}
+
+@media(min-width: $desktop-width) {
+    .filter__box {
+        display: flex;
+        flex-direction: column;
+        width: 345px;
+        padding-top: 10px;
+        border-radius: 5px;
+    }
+}
+
+.filter__block {
+    margin: 0 20px;
+    padding: 18px 0 16px 0;
+    border-bottom: .5px solid #c4c4c4;
+}
+
+@media(min-width: $tablet-width) {
+    .filter__block {
+        padding: 18px 0 25px;
+    }
+}
+
+@media(min-width:$desktop-width) {
+    .filter__block {
+        padding: 15px 0 0px;
+    }
+}
+
+.filter__block-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.filter__name {
+    font-size: 13px;
+    line-height: 15px;
+    color: black;
+    font-weight: 500;
+    margin: 0;
+}
+
+.filter__block-main {
+    display: none;
+    padding: 0 0;
+}
+
+.filter__checkbox-inp:checked~.filter__block-main,
+.filter__checkbox-inp:checked~.filter__box {
+    display: block;
+}
+
+.filter__items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter__item {
+    margin: 0px 0 11px 0;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $gray;
+    cursor: pointer;
+}
+
+.filter__item-wrapper {
+    cursor: pointer;
+    position: relative;
+    padding-left: 23px;
+    padding-right: 23px;
+}
+
+.filter__checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $green;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.filter__checkbox-inp:checked+.filter__checkbox::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    background: url(/img/checkbox.svg) 50% 50% no-repeat;
+    width: 9px;
+    height: 7px;
+    background-size: 9px;
+}
+
+.filter__box-under {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+@media(min-width:$desktop-width) {
+    .filter__box-under {
+        justify-content: flex-end;
+        width: 1055px;
+        padding-left: 110px;
+        box-sizing: border-box;
+        border-bottom: .5px solid #ececec;
+        height: 62px;
+        margin-top: 0;
+    }
+}
+
+.filter__box-under .filter__under-price:first-child {
+    position: relative;
+    top: 9px;
+}
+
+.filter__under-price {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: $tablet-width) {
+    .filter__under-price:first-child {
+        margin-right: 55px;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .filter__under-price:first-child {
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+
+@media(min-width: $desktop-width) {
+    .filter__under-price {
+        margin-left: 27px;
+    }
+}
+
+.filter__under-price--footer {
+    display: none;
+}
+
+@media (min-width: $desktop-width) {
+    .filter__under-price--footer {
+        display: flex;
+        position: absolute;
+        right: 48px;
+        top: 3px;
+    }
+}
+
+.filter__under-price>label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter__under-price .filter__name {
+    padding-right: 10px;
+}
+
+.filter__radio-box input:checked+span {
+    color: $green;
+}
+
+.filter__box-under .filter__checkbox {
+    border: 1px solid $gray;
+    right: 0;
+    left: auto;
+}
+
+.filter__box-under .filter__item-wrapper {
+    font-size: 13px;
+    line-height: 15px;
+    padding-left: 0;
+    font-weight: 500;
+}
+
+.filter__items-wrapper {
+    display: none;
+    z-index: 10;
+    position: relative;
+}
+
+.filter__checkbox-inp:checked~.filter__items-wrapper {
+    display: block;
+}
+
+.filter__product-inner {
+    position: relative;
+    padding: 10px 25px 10px 11px;
+    background-color: $light-gray;
+    border-radius: 3px;
+    color: $green;
+    min-width: 50px;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+}
+
+.filter__product-inner::before {
+    content: "";
+    position: absolute;
+    right: 7px;
+    top: 15px;
+    background: url(/img/arrow__green.png) 50% 50% no-repeat;
+    width: 9px;
+    height: 5px;
+    background-size: 8px;
+    transform: rotate(180deg);
+}
+
+.filter__checkbox-inp:checked+label>.filter__product-inner::before {
+    transform: rotate(0deg);
+    right: 9px;
+}
+
+.filter__product-inner--sort {
+    padding-right: 19px;
+    width: 138px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.filter__items-page {
+    font-size: 13px;
+    background: #ececec;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    right: -93px;
+    top: -7px;
+    border-radius: 3px;
+}
+
+.filter__items-page .filter__radio-box {
+    width: 49px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.filter__items-page--sort .filter__radio-box {
+    width: 131px;
+    display: inline-block;
+    text-align: left;
+}
+
+.filter__items-page--sort {
+    padding: 0;
+    padding-left: 7px;
+    right: -123px;
+}
+
+.filter__item-page {
+    text-align: center;
+    padding: 12px 0;
+    cursor: pointer;
+}

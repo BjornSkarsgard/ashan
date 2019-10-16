@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Ашан</title>
+</head>
+
+<body>
+    <div class="head-nav">
+        <div class="head-nav__wrapper">
+            <div class="head-nav__company">
+                <div class="head-nav__city-wrapper" id="cities">
+                    <p class="head-nav__title">Ваш город:</p>
+                    <span class="head-nav__inner">Тюмень</span>
+                    <ul class="head-nav__items">
+                        <li class="head-nav__cities">Тюмень</li>
+                        <li class="head-nav__cities">Екатеринбург</li>
+                        <li class="head-nav__cities">Москва</li>
+                        <li class="head-nav__cities">Новосибирск</li>
+                        <li class="head-nav__cities">Санкт-Петербург</li>
+                        <li class="head-nav__cities">Ростов на Дону</li>
+                        <li class="head-nav__cities">Челябинск</li>
+                    </ul>
+                </div>
+                <div class="head-nav__links">
+                    <a class="head-nav__link" href="">О компании</a>
+                    <a class="head-nav__link" href="">Наши магазины</a>
+                    <a class="head-nav__link" href="">Работа у нас</a>
+                </div>
+            </div>
+            <div class="head-nav__tel-wrapper">
+                <a class="head-nav__tel" href="tel:8(800)700-58-00">8 (800) 700-58-00</a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="header">
+            <div class="header__wrapper">
+                <div class="header__nav-container">
+                    <a class="header__link-burger" href="#">
+                        <span class="header__burger"></span>
+                    </a>
+                    <h1 class="header__nav-title">Каталог товаров</h1>
+                    <nav class="header__nav">
+                        <ul class="header__nav-items">
+                            <li class="header__nav-item"></li>
+                            <li class="header__nav-item"></li>
+                            <li class="header__nav-item"></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header__logo-container">
+                    <picture>
+                        <source media="(min-width: 1500px)" srcset="./img/logo__desk.png 1x">
+                        <source media="(min-width: 768px)" srcset="./img/logo__tablet.png 1x">
+                        <img class="header__logo-img" src="./img/logo__mobile.png" alt="Логотип" width="98" height="30">
+                    </picture>
+                </div>
+                <div class="header__user-container">
+                    <a href="#" class="header__user">
+                        <span class="header__icon header__icon-ask"></span>
+                        <span class="header__user-title">Вопросы и ответы</span>
+                    </a>
+                    <a href="#" class="header__user">
+                        <span class="header__icon header__icon-login"></span>
+                        <span class="header__user-title">Вход / Регистрация</span>
+                    </a>
+                    <a href="#" class="header__user">
+                        <span class="header__icon header__icon-cage"></span>
+                        <span class="header__user-title">Корзина <span class="header__cage-insert">0 руб</span></span>
+                    </a>
+                </div>
+            </div>
+            <div class="header__search-container">
+                <form class="header__form" action="GET">
+                    <input class="header__search-inp" type="text" placeholder="Что вы хотете найти?">
+                    <button class="header__search-btn" type="submit">Найти</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <section class="main__menu menu">
+                <h2 class="visually-hidden">Меню</h2>
+                <nav class="menu__nav">
+                    <ul class="menu__items">
+                        <li class="menu__item"><a href="#">Главная</a></li>
+                        <li class="menu__item"> <a href="#">Продукты</a> </li>
+                        <li class="menu__item menu__item--active"> <a class="menu__item--active" href="#">Новинки</a></li>
+                    </ul>
+                </nav>
+                <h1 class="menu__title">Новинки продуктов</h1>
+            </section>
+            <section class="main__filter filter">
+                <h2 class="visually-hidden">Фильтры</h2>
+                <div class="filter__wrapper">
+                    <input id="roll-main" class="filter__checkbox-inp  visually-hidden" type="checkbox">
+                    <div class="filter__header">
+                        <p class="filter__title">Фильтры</p>
+                        <div class="filter__block-roll">
+                            <label class="filter__roll-wrapper filter__roll-wrapper--main" for="roll-main">
+                                <span class="filter__checkbox-roll"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__box">
+                        <div class="filter__block">
+                            <input id="roll-0" class="filter__checkbox-inp visually-hidden" type="checkbox">
+                            <div class="filter__block-header">
+                                <p class="filter__name">Цена</p>
+                                <div class="filter__block-roll">
+                                    <label class="filter__roll-wrapper" for="roll-0">
+                                            <span class="filter__checkbox-roll"></span>
+                                        </label>
+                                </div>
+                            </div>
+                            <div class="filter__block-main filter__range-block">
+                                <div class="filter__range">
+                                    <div id="slider-range"></div>
+                                </div>
+                                <p>
+                                    <input type="text" id="amount" readonly>
+                                    <span class="slider__range-line"></span>
+                                    <input type="text" id="amount_1" readonly>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="filter__block">
+                            <input id="roll-1" class="filter__checkbox-inp visually-hidden" type="checkbox">
+                            <div class="filter__block-header">
+                                <p class="filter__name">Бренд</p>
+                                <div class="filter__block-roll">
+                                    <label class="filter__roll-wrapper" for="roll-1">
+                                        <span class="filter__checkbox-roll"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <nav class="filter__block-main">
+                                <ul class="filter__items">
+                                    <li class="filter__item">
+                                        <label class="filter__item-wrapper" for="AlpenGold">
+                                            <input class="filter__checkbox-inp visually-hidden" id="AlpenGold" type="checkbox">
+                                            <span class="filter__checkbox"></span>
+                                                    Alpen Gold (2)
+                                        </label>
+                                    </li>
+                                    <li class="filter__item">
+                                        <label class="filter__item-wrapper" for="CasaDolcini">
+                                                <input class="filter__checkbox-inp visually-hidden" id="CasaDolcini" type="checkbox">
+                                                <span class="filter__checkbox"></span>
+                                                Casa Dolcini (1)
+                                            </label>
+                                    </li>
+                                    <li class="filter__item">
+                                        <label class="filter__item-wrapper" for="SantaMaria">
+                                                    <input class="filter__checkbox-inp visually-hidden" id="SantaMaria" type="checkbox">
+                                                    <span class="filter__checkbox"></span>
+                                                    Santa Maria (2)
+                                                </label>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="filter__block">
+                            <input id="roll-2" class="filter__checkbox-inp visually-hidden" type="checkbox">
+                            <div class="filter__block-header">
+                                <p class="filter__name">Особенность</p>
+                                <div class="filter__block-roll">
+                                    <label class="filter__roll-wrapper" for="roll-2">
+                                            <span class="filter__checkbox-roll"></span>
+                                        </label>
+                                </div>
+                            </div>
+
+                            <nav class="filter__block-main">
+                                <ul class="filter__items">
+                                    <li class="filter__item">
+                                        <label class="filter__item-wrapper" for="Peanut">
+                                                <input class="filter__checkbox-inp visually-hidden" id="Peanut" type="checkbox">
+                                                <span class="filter__checkbox"></span>
+                                                С арахисом
+                                            </label>
+                                    </li>
+                                    <li class="filter__item">
+                                        <label class="filter__item-wrapper" for="Nosugar">
+                                                    <input class="filter__checkbox-inp visually-hidden" id="Nosugar" type="checkbox">
+                                                    <span class="filter__checkbox"></span>
+                                                    Без сахара
+                                                </label>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="filter__box-under">
+                        <div class="filter__under-price">
+                            <label class="filter__item-wrapper" for="discount">
+                                <input class="filter__checkbox-inp visually-hidden" id="discount" type="checkbox">
+                                <span class="filter__checkbox"></span>
+                                        Цена со скидкой
+                            </label>
+                        </div>
+                        <div class="filter__under-price">
+                            <input class="filter__checkbox-inp visually-hidden" id="ProductInner" type="checkbox">
+                            <label for="ProductInner">
+                                    <span class="filter__name">Товаров на странице</span>
+                                <span id="filter__product__page" class="filter__product-inner">6</span>
+                            </label>
+
+                            <nav class="filter__items-wrapper">
+                                <ul id="filter__items-page" class="filter__items-page">
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="num-6">
+                                            <input class="visually-hidden"  id="num-6" type="radio" name="pages" value="6" checked>
+                                            <span class="filter__indicator">6</span>
+                                        </label>
+
+                                    </li>
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="num-12">
+                                                <input class="visually-hidden"  id="num-12" type="radio" name="pages" value="12">
+                                                <span class="filter__indicator">12</span>
+                                            </label>
+
+                                    </li>
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="num-18">
+                                                    <input class="visually-hidden" id="num-18" type="radio" name="pages" value="18">
+                                                    <span class="filter__indicator">18</span>
+                                                </label>
+                                    </li>
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="num-24">
+                                                <input class="visually-hidden"  id="num-24" type="radio" name="pages" value="24">
+                                                <span class="filter__indicator">24</span>
+                                            </label>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="filter__under-price">
+                            <input class="filter__checkbox-inp visually-hidden" id="ProductSort" type="checkbox">
+                            <label for="ProductSort">        
+                                <span class="filter__name">Сортировать по</span>
+                                <span id="filter__product-sort" class="filter__product-inner filter__product-inner--sort">популярности</span>
+                            </label>
+                            <nav class="filter__items-wrapper">
+                                <ul id="filter__items-sort" class="filter__items-page filter__items-page--sort">
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="sort-popular">
+                                                        <input class="visually-hidden"  id="sort-popular" type="radio" name="sort" value="popular" checked>
+                                                        <span class="filter__indicator">популярности</span>           
+                                                    </label>
+                                    </li>
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="sort-A-Z">
+                                                            <input class="visually-hidden"  id="sort-A-Z" type="radio" name="sort" value="A-Z">
+                                                            <span class="filter__indicator">названию А-Я</span>
+                                                        </label>
+                                    </li>
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="sort-Z-A">
+                                                                <input class="visually-hidden"  id="sort-Z-A" type="radio" name="sort" value="Z-A">
+                                                                <span class="filter__indicator">названию Я-А</span>
+                                                            </label>
+                                    </li>
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="sort-price-max">
+                                                                    <input class="visually-hidden"  id="sort-price-max" type="radio" name="sort" value="price-max">
+                                                                    <span class="filter__indicator">возрастанию цены</span>
+                                                                </label>
+                                    </li>
+                                    <li class="filter__item-page">
+                                        <label class="filter__radio-box" for="sort-price-min">
+                                                                        <input class="visually-hidden"  id="sort-price-min" type="radio" name="sort" value="price-min">
+                                                                        <span class="filter__indicator">убыванию цены</span>
+                                                                    </label>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main__content content">
+                <h2 class="visually-hidden">Блок товаров</h2>
+                <article class="content__block block">
+                    <h2 class="visually-hidden">Товар</h2>
+                    <div class="block__picture">
+                        <div class="block__img-wrapper">
+                            <img class="block__img" width="200" height="200" src="./img/photo.png" alt="Фотография товара">
+                        </div>
+                        <p class="block__title">Копченая паприка Santa Maria, 230г</p>
+                    </div>
+                    <div class="block__price">
+                        <p class="block__price-discount">643 р.</p>
+                        <p class="block__price-sell">449 р.</p>
+                    </div>
+                    <div class="block__buy">
+                        <div class="block__amount-wrapper">
+                            <span class="block__del"></span>
+                            <span class="block__count">1</span>
+                            <span class="block__add"></span>
+                        </div>
+                        <div class="block__cage-add">
+                            <button id="good__01" class="block__btn">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="content__block block">
+                    <h2 class="visually-hidden">Товар</h2>
+                    <div class="block__picture">
+                        <div class="block__img-wrapper">
+                            <img class="block__img" width="200" height="200" src="./img/photo-1.png" alt="Фотография товара">
+                        </div>
+                        <p class="block__title">Конфеты «Фруже», абрикос с миндалём в белом шоколаде, 220г</p>
+                    </div>
+                    <div class="block__price">
+                        <p class="block__price-discount"></p>
+                        <p class="block__price-sell">149 р.</p>
+                    </div>
+                    <div class="block__buy">
+                        <div class="block__amount-wrapper">
+                            <span class="block__del"></span>
+                            <span class="block__count">1</span>
+                            <span class="block__add"></span>
+                        </div>
+                        <div class="block__cage-add">
+                            <button id="good__02" class="block__btn">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="content__block block">
+                    <h2 class="visually-hidden">Товар</h2>
+                    <div class="block__picture">
+                        <div class="block__img-wrapper">
+                            <img class="block__img" width="200" height="200" src="./img/photo-2.png" alt="Фотография товара">
+                        </div>
+                        <p class="block__title">Печенье бисквитное Casa Dolcini Lady Fingers, 200г</p>
+                    </div>
+                    <div class="block__price">
+                        <p class="block__price-discount"></p>
+                        <p class="block__price-sell">213 р.</p>
+                    </div>
+                    <div class="block__buy">
+                        <div class="block__amount-wrapper">
+                            <span class="block__del"></span>
+                            <span class="block__count">1</span>
+                            <span class="block__add"></span>
+                        </div>
+                        <div class="block__cage-add">
+                            <button id="good__03" class="block__btn">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="content__block block">
+                    <h2 class="visually-hidden">Товар</h2>
+                    <div class="block__picture">
+                        <div class="block__img-wrapper">
+                            <img class="block__img" width="200" height="200" src="./img/photo-3.png" alt="Фотография товара">
+                        </div>
+                        <p class="block__title">
+                            Шоколад молочный Alpen Gold Max Fun, 160г</p>
+                    </div>
+                    <div class="block__price">
+                        <p class="block__price-discount">147 р.</p>
+                        <p class="block__price-sell">120 р.</p>
+                    </div>
+                    <div class="block__buy">
+                        <div class="block__amount-wrapper">
+                            <span class="block__del"></span>
+                            <span class="block__count">1</span>
+                            <span class="block__add"></span>
+                        </div>
+                        <div class="block__cage-add">
+                            <button id="good__04" class="block__btn">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="content__block block">
+                    <h2 class="visually-hidden">Товар</h2>
+                    <div class="block__picture">
+                        <div class="block__img-wrapper">
+                            <img class="block__img" width="200" height="200" src="./img/photo-4.png" alt="Фотография товара">
+                        </div>
+                        <p class="block__title">
+                            Шоколад молочный Alpen Gold Max Fun, 160г</p>
+                    </div>
+                    <div class="block__price">
+                        <p class="block__price-discount"></p>
+                        <p class="block__price-sell">147 р.</p>
+                    </div>
+                    <div class="block__buy">
+                        <div class="block__amount-wrapper">
+                            <span class="block__del"></span>
+                            <span class="block__count">1</span>
+                            <span class="block__add"></span>
+                        </div>
+                        <div class="block__cage-add">
+                            <button id="good__05" class="block__btn">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="content__block block">
+                    <h2 class="visually-hidden">Товар</h2>
+                    <div class="block__picture">
+                        <div class="block__img-wrapper">
+                            <img class="block__img" width="200" height="200" src="./img/photo-5.png" alt="Фотография товара">
+                        </div>
+                        <p class="block__title">Прованские травы Santa Maria, 6г</p>
+                    </div>
+                    <div class="block__price">
+                        <p class="block__price-discount"></p>
+                        <p class="block__price-sell">39 р.</p>
+                    </div>
+                    <div class="block__buy">
+                        <div class="block__amount-wrapper">
+                            <span class="block__del"></span>
+                            <span class="block__count">1</span>
+                            <span class="block__add"></span>
+                        </div>
+                        <div class="block__cage-add">
+                            <button id="good__06" class="block__btn">В корзину</button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <section class="footer__paginator paginator">
+                <h2 class="visually-hidden">Пагинация сайта</h2>
+                <div class="paginator__wrapper">
+                    <ul class="paginator__items">
+                        <li class="paginator__item">
+                            <a class="paginator__item-link" href=""></a>
+                        </li>
+                        <li class="paginator__item">
+                            <a class="paginator__item-link paginator__item-link--active" href="">1</a>
+                        </li>
+                        <li class="paginator__item">
+                            <a class="paginator__item-link" href="">2</a>
+                        </li>
+                        <li class="paginator__item">
+                            <a class="paginator__item-link" href="">3</a>
+                        </li>
+                        <li class="paginator__item">
+                            <a class="paginator__item-link" href="">4</a>
+                        </li>
+                        <li class="paginator__item">
+                            <a class="paginator__item-link" href="">...</a>
+                        </li>
+                        <li class="paginator__item">
+                            <a class="paginator__item-link" href="">60</a>
+                        </li>
+                        <li class="paginator__item">
+                            <a class="paginator__item-link" href=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2 class="visually-hidden">Сортировка</h2>
+                <div class="filter__under-price filter__under-price--footer">
+                    <input class="filter__checkbox-inp visually-hidden" id="ProductSortFooter" type="checkbox">
+                    <label for="ProductSortFooter">        
+                                <span class="filter__name">Сортировать по</span>
+                                <span id="filter__product-inner" class="filter__product-inner filter__product-inner--sort">популярности</span>
+                            </label>
+                    <nav class="filter__items-wrapper">
+                        <ul id="filter__items-sort--footer" class="filter__items-page filter__items-page--sort">
+                            <li class="filter__item-page">
+                                <label class="filter__radio-box" for="sort-popular--footer">
+                                                        <input class="visually-hidden"  id="sort-popular--footer" type="radio" name="sort" value="popular" checked>
+                                                        <span class="filter__indicator">популярности</span>           
+                                                    </label>
+                            </li>
+                            <li class="filter__item-page">
+                                <label class="filter__radio-box" for="sort-A-Z--footer">
+                                                            <input class="visually-hidden"  id="sort-A-Z--footer" type="radio" name="sort" value="A-Z">
+                                                            <span class="filter__indicator">названию А-Я</span>
+                                                        </label>
+                            </li>
+                            <li class="filter__item-page">
+                                <label class="filter__radio-box" for="sort-Z-A--footer">
+                                                                <input class="visually-hidden"  id="sort-Z-A--footer" type="radio" name="sort" value="Z-A">
+                                                                <span class="filter__indicator">названию Я-А</span>
+                                                            </label>
+                            </li>
+                            <li class="filter__item-page">
+                                <label class="filter__radio-box" for="sort-price-max--footer">
+                                                                    <input class="visually-hidden"  id="sort-price-max--footer" type="radio" name="sort" value="price-max">
+                                                                    <span class="filter__indicator">возрастанию цены</span>
+                                                                </label>
+                            </li>
+                            <li class="filter__item-page">
+                                <label class="filter__radio-box" for="sort-price-min--footer">
+                                                                        <input class="visually-hidden"  id="sort-price-min--footer" type="radio" name="sort" value="price-min">
+                                                                        <span class="filter__indicator">убыванию цены</span>
+                                                                    </label>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </footer>
+    <script src="./js/basket/basket.js"></script>
+    <script src="./js/head__cities/head__cities.js"></script>
+    <script src="./js/filter__sort/filter__sort.js"></script>
+    <script src="./js/slider__range/slider__range.js"></script>
+</body>
+
+</html>
